@@ -9,11 +9,11 @@ public class Calculator {
     }
 
     public Double youSend(Double myMoney) {
-        return myMoney * rate.getMid();
+        return myMoney * rate.getBid();
     }
 
     public Double theyReceive(Double theyMoney) {
-        return theyMoney/rate.getMid();
+        return theyMoney/rate.getAsk();
     }
 
 }
