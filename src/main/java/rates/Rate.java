@@ -4,12 +4,14 @@ public class Rate {
 
     private String currency;
     private String code;
-    private Double mid;
+    private Double bid;
+    private Double ask;
 
-    public Rate(String currency, String code, Double mid) {
+    public Rate(String currency, String code, Double bid, Double ask) {
         this.currency = currency;
         this.code = code;
-        this.mid = mid;
+        this.bid = bid;
+        this.ask = ask;
     }
 
     public String getCurrency() {
@@ -20,12 +22,16 @@ public class Rate {
         return code;
     }
 
-    public Double getMid() {
-        return mid;
+    public Double getBid() {
+        return bid;
+    }
+
+    public Double getAsk() {
+        return ask;
     }
 
     @Override
     public String toString() {
-        return "currency: " + currency + "; code: " + code + "; mid: " + mid;
+        return "currency: " + currency + "; code: " + code + "; bid: " + bid + "; ask: " + ask;
     }
 }
