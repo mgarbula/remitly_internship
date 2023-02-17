@@ -18,7 +18,7 @@ public class Tests {
 
     @Before
     public void getRates() throws IOException {
-        NBPConnector connector = new NBPConnector("http://api.nbp.pl/api/exchangerates/tables/c/2016-04-04/?format=json");
+        NBPConnector connector = new NBPConnector("http://api.nbp.pl/api/exchangerates/tables/a/2016-04-04/?format=json");
         JsonReader ratesReader = new JsonReader(new InputStreamReader(connector.getInputStream()));
 
         JSONHandler handler = new JSONHandler(ratesReader);
@@ -36,7 +36,7 @@ public class Tests {
         }
 
         Calculator calculator = new Calculator(usd);
-        assertEquals(3.6929, calculator.youSend(1.0), 0.01);
+        assertEquals(3.7254, calculator.youSend(1.0), 0.01);
         assertEquals(0.2654, calculator.theyReceive(1.0), 0.01);
     }
 
