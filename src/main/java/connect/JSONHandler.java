@@ -50,8 +50,7 @@ public class JSONHandler {
     private Rate readRate(JsonReader ratesReader) throws IOException {
         String currency = null;
         String code = null;
-        Double bid = 0.0;
-        Double ask = 0.0;
+        Double mid = 0.0;
 
         ratesReader.beginObject();
         while (ratesReader.hasNext()) {
@@ -60,15 +59,13 @@ public class JSONHandler {
                 currency = ratesReader.nextString();
             } else if (name.equals("code")) {
                 code = ratesReader.nextString();
-            } else if (name.equals("bid")) {
-                bid = ratesReader.nextDouble();
-            } else if (name.equals("ask")) {
-                ask = ratesReader.nextDouble();
+            } else if (name.equals("mid")) {
+                mid = ratesReader.nextDouble();
             }
         }
         ratesReader.endObject();
 
-        return new Rate(currency, code, bid, ask);
+        return new Rate(currency, code, mid);
     }
 
 }
