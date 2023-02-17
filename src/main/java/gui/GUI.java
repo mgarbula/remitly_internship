@@ -136,9 +136,13 @@ public class GUI extends JFrame {
     }
 
     private void clear() {
-        youSendText.setText("");
-        theyReceiveText.setText("");
-        currentRateLabel.setText(setCurrentRateLabel());
+        try {
+            youSendText.setText("");
+            theyReceiveText.setText("");
+            currentRateLabel.setText(setCurrentRateLabel());
+        } catch (NullPointerException e) {
+            
+        }
     }
 
     private Vector<String> symbols() {
